@@ -9,6 +9,7 @@ if(builder.Environment.IsProduction())
 {
     Console.WriteLine("--> Using SQL Server DB");
     builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("PlatformsConn")));
+    Console.WriteLine(builder.Configuration["CommandService"]);
 }
 else
 {
